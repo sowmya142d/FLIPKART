@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f9f9f9;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        /* Styling default select */
+        select {
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #999;
+            font-size: 16px;
+        }
+
+        /* Custom dropdown */
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .dropbtn {
+            padding: 10px 20px;
+            border: none;
+            background: #3498db;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown-content a:hover {
+            background: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* JS Toggle Dropdown */
+        .js-dropdown {
+            margin-top: 20px;
+        }
+
+        .js-menu {
+            display: none;
+            margin-top: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 10px;
+            width: 150px;
+        }
+
+        .js-menu a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .js-menu a:hover {
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dropdown Examples</h1>
+
+    <!-- 1. Basic Dropdown -->
+    <h2>1. Basic HTML Dropdown</h2>
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+
+    <!-- 2. Grouped Dropdown -->
+    <h2>2. Grouped Dropdown</h2>
+    <select>
+        <optgroup label="Fruits">
+            <option>Apple</option>
+            <option>Mango</option>
+            <option>Banana</option>
+        </optgroup>
+        <optgroup label="Vegetables">
+            <option>Carrot</option>
+            <option>Spinach</option>
+            <option>Potato</option>
+        </optgroup>
+    </select>
+
+    <!-- 3. Custom Dropdown (CSS only) -->
+    <h2>3. Custom Dropdown (CSS only)</h2>
+    <div class="dropdown">
+        <button class="dropbtn">Menu ▼</button>
+        <div class="dropdown-content">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+        </div>
+    </div>
+
+    <!-- 4. JavaScript Controlled Dropdown -->
+    <h2>4. JavaScript Dropdown (Toggle)</h2>
+    <div class="js-dropdown">
+        <button onclick="toggleDropdown()">Show Options ▼</button>
+        <div id="menu" class="js-menu">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+            <a href="#">Option 3</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            let menu = document.getElementById("menu");
+            menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+        }
+    </script>
+
+</body>
+
+</html>
